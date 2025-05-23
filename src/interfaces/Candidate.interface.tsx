@@ -1,4 +1,5 @@
 // TODO: Create an interface for the Candidate objects returned by the API
+<<<<<<< HEAD
 export interface Candidate {
     id: number; // Unique identifier for the candidate
     name: string; // Full name of the candidate
@@ -9,3 +10,5 @@ export interface Candidate {
     html_url: string; // Link to the candidate's GitHub profile
     company: string; // Candidate's current company or organization
   }
+=======
+>>>>>>> 030fa864e866ba716b7b3847e62f6991c3eac7a9
