@@ -6,6 +6,7 @@ import App from './App.tsx';
 import CandidateSearch from './pages/CandidateSearch.tsx';
 import SavedCandidates from './pages/SavedCandidates.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
+import { CandidateProvider } from './contexts/CandidateContext';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
         element: <CandidateSearch />,
       },
       {
-        path: '/SavedCandidates',
+        path: '/saved-candidates',
         element: <SavedCandidates />,
       },
     ],
@@ -27,5 +28,9 @@ const router = createBrowserRouter([
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(<RouterProvider router={router} />);
+  ReactDOM.createRoot(rootElement).render(
+    <CandidateProvider>
+      <RouterProvider router={router} />
+    </CandidateProvider>
+  );
 }
