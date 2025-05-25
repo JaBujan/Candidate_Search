@@ -1,33 +1,70 @@
-# React + TypeScript + Vite
+# Candidate Search Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Description](#description)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
 
-## Expanding the ESLint configuration
+Candidate Search is a React-based web application that allows users to search for GitHub users, review their profiles, and save potential candidates for future reference. The app features sorting, pagination, and persistent local storage for saved candidates.
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-* Configure the top-level `parserOptions` property as follows:
+-   Search GitHub users and view their profiles
+-   Save candidates for future reference
+-   Sort and paginate saved candidates
+-   Responsive design for desktop and mobile
+-   Local storage persistence
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+## Technologies Used
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+- **Frontend:**
+    - React
+    - Vite
+    - TypeScript
+    - HTML5
+    - CSS3
+
+
+## Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/JaBujan/Candidate_Search
+    cd Candidate_Search
+    ```
+2.  **Install dependencies:**
+    Choose one depending on your package manager:
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    yarn install
+    ```
+3.  **Set up environment variables:**
+    If the application requires environment variables (e.g., for API keys or backend URLs), create a `.env` file in the root directory and add the necessary variables.
+    Example `.env` structure:
+    ```
+    VITE_API_BASE_URL=your_api_url_here
+    ```
+    (Refer to `src/api/API.tsx` or other relevant files for required environment variables.)
+
+## Usage
+
+1.  **Start the development server:**
+    Choose one depending on your package manager:
+    ```bash
+    npm run dev
+    ```
+    or
+    ```bash
+    yarn dev
+    ```
+2.  Open your browser and navigate to `http://localhost:5173` (or the port specified by Vite).
+
