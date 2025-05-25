@@ -25,9 +25,9 @@ a:hover {
 body {
   background: linear-gradient(
     180deg,
-    rgb(32, 44, 136) 0%,
-    rgba(9, 9, 121, 1) 15%,
-    rgba(0, 2, 18, 1) 100%
+    #5f5f5f 0%,
+    #000000 100%
+    
   );
   background-size: cover;
   background-repeat: no-repeat no-repeat;
@@ -94,27 +94,164 @@ tbody tr:nth-child(odd) {
   background-color: #333333;
 }
 
+/* Navigation Bar Styles */
 .nav {
-  display: flex;
-  justify-content: flex-start;
-  padding: 1em 2em;
+  background-color: rgba(26, 26, 26, 0.8); /* Slightly transparent dark background */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  padding: 1em 2em; /* Horizontal padding for content */
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2em; /* Space below the nav */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Subtle shadow */
+  /* The UL child inside .nav has display:flex from inline styles in Nav.tsx */
+  /* This keeps items left-aligned by default within the padded .nav bar */
 }
 
 .nav-item {
-  padding: 0 0.5rem;
   list-style: none;
+  margin: 0 8px; /* Spacing between nav items */
 }
 
 .nav-link {
-  color: #fff;
+  color: #e0e0e0; /* Lighter text color */
   text-decoration: none;
+  padding: 0.75em 1.25em; /* Padding for clickability */
+  border-radius: 6px; /* Rounded corners */
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  font-weight: 500;
+  font-size: 0.95em; /* Slightly adjusted font size */
+  display: block; /* Ensures padding is applied correctly */
 }
 
-.active {
-  font-weight: 700;
+.nav-link:hover {
+  background-color: rgba(74, 85, 102, 0.5); /* Darker, less transparent hover */
+  color: #fff; /* White text on hover */
+}
+
+.nav-link.active { /* Targets elements with both .nav-link and .active classes */
+  background-color: #4A5568; /* A more subtle accent color for active link */
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for active state */
 }
 
 .table {
   width: 80vw;
   table-layout: fixed;
+  border-spacing: 0; /* Important for cell padding to look right with background colors */
+}
+
+.table th,
+.table td {
+  padding: 16px;
+  text-align: left; /* Or your preferred alignment */
+}
+
+#table-img {
+  max-width: 100px;
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+#img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Also vertically centers if the cell is taller than the image */
+}
+
+/* Candidate Card Styles */
+.candidate-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.candidate-card {
+  background-color: #1a1a1a; /* Dark background */
+  border-radius: 16px; /* Rounded corners */
+  padding: 24px;
+  width: 320px; /* Fixed width, adjust as needed */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23); /* Softer shadow */
+  color: #f0f0f0; /* Light text color */
+  text-align: center; /* Center text inside the card */
+  margin-bottom: 20px; /* Space before action buttons */
+}
+
+.candidate-card img.avatar {
+  width: 120px; /* Larger avatar */
+  height: 120px;
+  border-radius: 50%; /* Circular avatar */
+  margin-bottom: 16px;
+  border: 3px solid #646cff; /* Accent border */
+  object-fit: cover;
+}
+
+.candidate-card h2 {
+  font-size: 1.8em;
+  color: #fff; /* White name */
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.candidate-card .username {
+  font-size: 1.1em;
+  color: #a0a0a0; /* Lighter gray for username */
+  margin-bottom: 16px;
+}
+
+.candidate-card .info-item {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  text-align: left;
+  word-break: break-word;
+}
+
+.candidate-card .info-item strong {
+  color: #8c9eff; /* Accent color for labels */
+}
+
+.candidate-card .bio {
+  font-style: italic;
+  color: #c0c0c0;
+  margin-top: 12px;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.candidate-card a {
+  color: #82aaff; /* Link color */
+  text-decoration: none;
+}
+
+.candidate-card a:hover {
+  color: #646cff;
+  text-decoration: underline;
+}
+
+.candidate-actions {
+  display: flex;
+  justify-content: space-around; /* Space out buttons */
+  width: 200px; /* Container for buttons */
+  margin-top: 10px; /* Adjusted from card margin-bottom */
+}
+
+.candidate-actions svg {
+  font-size: 60px; /* Larger icons */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.candidate-actions svg:hover {
+  transform: scale(1.1);
+}
+
+.candidate-actions .reject-icon {
+  color: #ff6b6b; /* Softer red */
+}
+
+.candidate-actions .accept-icon {
+  color: #51cf66; /* Softer green */
 }
